@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
+const ObjectId = require("mongodb").ObjectID;
 require("dotenv").config();
 
 const MongoClient = require("mongodb").MongoClient;
@@ -8,30 +10,31 @@ const client = new MongoClient(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
+
+app.use(cors());
+app.use(express.json());
+
 client.connect((err) => {
     console.log("Mongo is here");
     const blogsCollection = client.db(process.env.DB_NAME).collection("blogs");
     const adminCollection = client.db(process.env.DB_NAME).collection("admins");
 
     app.post("/addBlog", (req, res) => {
-        const { content, blogTitle, imageURL } = req.body;
-        const blog = { content, blogTitle, imageURL };
-        blogsCollection.insertOne(blog).then((result) => {
+        blogsCollection.insertOne(req.body).then((result) => {
             res.send(result.insertedCount > 0);
         });
     });
 
     app.post("/makeAdmin", (req, res) => {
-        const { email } = req.body;
-        const admin = { email };
-        adminCollection.insertOne(admin).then((result) => {
+        adminCollection.insertOne(req.body).then((result) => {
             res.send(result.insertedCount > 0);
         });
     });
 
     app.get("/blogs", (req, res) => {
         blogsCollection.find({}).toArray((err, documents) => {
-            res.send(documents);
+            if (err) res.status(500).send({ msg: error.message });
+            res.status(200).send(documents);
         });
     });
 
