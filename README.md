@@ -1,16 +1,18 @@
 # Just Blog It Server
 
-Welcome to my server!!! Here you can request a number of data which is basically the data of "Blogs" from this server. By calling [The Root API](https://powerful-springs-02476.herokuapp.com/), you can get a simple "Hello World" which is not necessarily useful, but root URL is always important. So, I wanted to make you know that.
+Welcome to my server!!! This server is made for my MERN stack website [Just blog It](https://mighty-inlet-09591.herokuapp.com/).
 
-## [Visit My Root API](https://powerful-springs-02476.herokuapp.com/)
+Here you can request a number of data which is basically the data of "Blogs" from this server. By calling [The Root API](https://frozen-coast-84516.herokuapp.com/), you can get a simple "Hello World" which is not necessarily useful, but root URL is always important. So, I wanted to make you know that.
 
-## My client side code: [https://github.com/Lamisa-zamzam/zamzams-collection](https://github.com/Lamisa-zamzam/zamzams-collection)
+## [Visit My Root API: https://frozen-coast-84516.herokuapp.com/](https://frozen-coast-84516.herokuapp.com/)
 
-## My live site: [https://full-stack-sport-grocery.web.app/](https://full-stack-sport-grocery.web.app/)
+## My client side code: [https://github.com/Lamisa-zamzam/just-blog-it/](https://github.com/Lamisa-zamzam/just-blog-it/)
 
-Secondly, if you call [The Products API](https://powerful-springs-02476.herokuapp.com/products), you will get the data of several jerseys to be sold in an array. The array contains an object for each jersey and each object contains some properties, namely: \_id, id, product(title of the jersey), price, detail and image(URL to the picture of the jersey). Though they are not real ones, however, that could work great as placeholders.
+## My live site: [https://mighty-inlet-09591.herokuapp.com/](https://mighty-inlet-09591.herokuapp.com/)
 
-If you want to get the information of a specific product, you're gonna do that with [https://powerful-springs-02476.herokuapp.com/product/:id](https://powerful-springs-02476.herokuapp.com/product/:id). But wait!!! You have to replace :id with the id of the product you want to get and also this API is private, so you are not going to get the info until you are logged in in My Website [Zamzam's Collection](https://full-stack-sport-grocery.web.app/). Actually, this server was made only for this website, so this website has a power over this server. You can [add product to this server](https://powerful-springs-02476.herokuapp.com/addProduct), [add an order for your chosen jersey](https://powerful-springs-02476.herokuapp.com/addOrder) and even [delete](https://powerful-springs-02476.herokuapp.com/deleteProduct/:_id) or [Edit](https://powerful-springs-02476.herokuapp.com/editProduct/:product) a product form here using that website. But again, you have to be logged in in that website and have the id of the specific product in the cases you need it.
+Secondly, if you call [The Blogs API](https://frozen-coast-84516.herokuapp.com/blogs), you will get the data of several blogs published in my website. The array contains an object for each blog and each object contains some properties, namely: \_id, title(title of the jersey), content (body) and cover image(cover image of the blog).
+
+If you want to get the information of a specific blog, you're gonna do that with [https://frozen-coast-84516.herokuapp.com/blog/:id](https://frozen-coast-84516.herokuapp.com/blog/:id). But wait!!! You have to replace :id with the id of the blog you want. You can [add blog to the DB](https://frozen-coast-84516.herokuapp.com/addBlog) and [delete](https://frozen-coast-84516.herokuapp.com/deleteBlog/:_id) a blog form here using my website.
 
 My project includes:
 
