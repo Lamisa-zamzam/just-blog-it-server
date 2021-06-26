@@ -39,11 +39,28 @@ client.connect((err) => {
     });
 
     app.get("/checkIfAdmin", (req, res) => {
-        const email = req.query.email;
-
-        adminCollection.find({ email: email }).toArray((err, documents) => {
+        const adminEmail = req.query.email;
+        adminCollection.find({ adminEmail }).toArray((err, documents) => {
             res.send(documents);
         });
+    });
+
+    app.post("/checkAdmin", (req, res) => {
+        const { email, password } = req.body;
+
+        if (password) {
+            adminCollection
+                .find({ adminEmail: email, adminPassword: password })
+                .toArray((err, documents) => {
+                    res.send(documents);
+                });
+        } else {
+            adminCollection
+                .find({ adminEmail: email })
+                .toArray((err, documents) => {
+                    res.send(documents);
+                });
+        }
     });
 
     app.get("/blog/:id", (req, res) => {
@@ -53,12 +70,22 @@ client.connect((err) => {
         });
     });
 
-    app.get("/blog", (req, res) => {
-        const blogName = req.query.blogName;
-        blogsCollection
-            .find({ blogName: blogName })
+    app.get("/blogs/:email", (req, res) => {
+        const email = req.params.email;
+        adminCollection
+            .find({ adminEmail: email })
             .toArray((err, documents) => {
-                res.send(documents);
+                if (documents[0]) {
+                    blogsCollection.find({}).toArray((err, documents) => {
+                        res.send(documents);
+                    });
+                } else {
+                    blogsCollection
+                        .find({ email: email })
+                        .toArray((err, documents) => {
+                            res.send(documents);
+                        });
+                }
             });
     });
 
