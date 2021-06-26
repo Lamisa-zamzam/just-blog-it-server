@@ -1,6 +1,6 @@
 # Just Blog It Server
 
-Welcome to my server!!! This server is made for my MERN stack website [Just blog It](https://mighty-inlet-09591.herokuapp.com/).
+Welcome to my server!!! This server is made for my MERN stack website [Just blog It](https://mystifying-turing-96de9a.netlify.app/).
 
 Here you can request a number of data which is basically the data of "Blogs" from this server. By calling [The Root API](https://frozen-coast-84516.herokuapp.com/), you can get a simple "Hello World" which is not necessarily useful, but root URL is always important. So, I wanted to make you know that.
 
@@ -8,7 +8,7 @@ Here you can request a number of data which is basically the data of "Blogs" fro
 
 ## My client side code: [https://github.com/Lamisa-zamzam/just-blog-it/](https://github.com/Lamisa-zamzam/just-blog-it/)
 
-## My live site: [https://mighty-inlet-09591.herokuapp.com/](https://mighty-inlet-09591.herokuapp.com/)
+## My live site: [https://mystifying-turing-96de9a.netlify.app/](https://mystifying-turing-96de9a.netlify.app/)
 
 Secondly, if you call [The Blogs API](https://frozen-coast-84516.herokuapp.com/blogs), you will get the data of several blogs published in my website. The array contains an object for each blog and each object contains some properties, namely: \_id, title(title of the jersey), content (body) and cover image(cover image of the blog).
 
